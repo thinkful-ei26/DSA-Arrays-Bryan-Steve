@@ -112,12 +112,34 @@ function mergeArr(ar1, ar2) {
 
   return mergedArr
 }
+
+// Products
+// Given an array of numbers, write an algorithm to find out the products of every number, except the one at that index.
+
+// Input:[1, 3, 9, 4]
+// Output:[108, 36, 12, 27]
+
+function products(araryOfNums) {
+  let result = []
+  let product = 1
+
+  for (let i = 0; i < araryOfNums.length; i++) {
+    product = 1
+    for (let j = 0; j < araryOfNums.length; j++) {
+      product = product * araryOfNums[j]
+    }
+    result.push(product / araryOfNums[i])
+  }
+
+  return result
+}
+
 function main() {
   Array.SIZE_RATIO = 3
   let arr = new Array()
   arr.push('3')
+  console.log(products([1, 3, 9, 4]))
   // maxSum([4, 6, -3, 5, -2, 1])
-  console.log(merge([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10]))
   // console.log(filterArray('1, 4, 5, 67, 7, 8, 10'))
 }
 
