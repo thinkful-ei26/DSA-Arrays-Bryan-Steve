@@ -2,7 +2,7 @@ const memory = require('./memory')
 
 class Array {
   constructor() {
-    this.length = 10
+    this.length = 0
     this.capacity = 10
     this.ptr = memory.allocate(this.length)
     //[][][][][]
