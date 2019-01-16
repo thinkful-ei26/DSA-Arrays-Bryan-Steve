@@ -56,11 +56,23 @@ const URLify = string => {
   return strArr.join('')
 }
 
+const filterArray = string => {
+  let strArr = string.split(',')
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i] < 5) {
+      strArr.splice(i, 1)
+      //confused on why this isnt working
+    }
+  }
+  return strArr.join('')
+}
+
 function main() {
   Array.SIZE_RATIO = 3
   let arr = new Array()
-  arr.push(3)
-  console.log(URLify('www.thinkful.com /tauh ida parv een'))
+  arr.push('3')
+  // filterArray('1,4,5,67,7,8,10')
+  console.log(filterArray('1, 4, 5, 67, 7, 8, 10'))
 }
 
 main()
