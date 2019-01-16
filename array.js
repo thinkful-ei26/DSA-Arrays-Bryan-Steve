@@ -58,10 +58,9 @@ const URLify = string => {
 
 const filterArray = string => {
   let strArr = string.split(',')
-  for (let i = 0; i < strArr.length; i++) {
+  for (var i = 0; i < strArr.length; i++) {
     if (strArr[i] < 5) {
-      strArr.splice(i, 1)
-      //confused on why this isnt working
+      delete strArr[i]
     }
   }
   return strArr.join('')
