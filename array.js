@@ -134,11 +134,19 @@ function products(araryOfNums) {
   return result
 }
 
+function rotate(s1, s2) {
+  if (s1.length !== s2.length) {
+    return false
+  }
+  return (s1 + s2).includes(s2)
+}
+
 function main() {
   Array.SIZE_RATIO = 3
   let arr = new Array()
   arr.push('3')
-  console.log(products([1, 3, 9, 4]))
+  // console.log(products([1, 3, 9, 4]))
+  // console.log(rotate('amazon', 'azonma'))
   // maxSum([4, 6, -3, 5, -2, 1])
   // console.log(filterArray('1, 4, 5, 67, 7, 8, 10'))
 }
