@@ -66,12 +66,53 @@ const filterArray = string => {
   return strArr.join('')
 }
 
+// Max sum in the array
+// You are given an array containing positive and negative integers. Write an algorithm which will find the largest sum in a continuous sequence.
+
+// Input: [4,6,-3,5,-2,1]
+// Output: 12
+
+function maxSum(array) {
+  let maxSumSoFar = 0
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] + array[i + 1] > maxSumSoFar) {
+    }
+  }
+  return maxSumSoFar
+}
+
+// Merge Arrays
+// Imagine you have two arrays which have already been sorted. Write an algorithm to merge the two arrays into a single array, which should also be sorted.
+
+// Input:[1, 3, 6, 8, 11] and [2, 3, 5, 8, 9, 10]
+// Output:[1, 2, 3, 3, 5, 6, 8, 8, 9, 10, 11]
+
+function merge(ar2, ar1) {
+  let mergedArr = []
+  let maxLength = 0
+  if (ar1.length > ar2.length) {
+    maxLength = ar1.length
+  } else {
+    maxLength = ar2.length
+  }
+  for (let i = 0; i < maxLength; i++) {
+    if (ar1[i] >= ar2[i]) {
+      mergedArr.push(ar2[i])
+      mergedArr.push(ar1[i])
+    } else {
+      mergedArr.push(ar1[i])
+      mergedArr.push(ar2[i])
+    }
+  }
+  console.log(mergedArr)
+}
 function main() {
   Array.SIZE_RATIO = 3
   let arr = new Array()
   arr.push('3')
-  // filterArray('1,4,5,67,7,8,10')
-  console.log(filterArray('1, 4, 5, 67, 7, 8, 10'))
+  // maxSum([4, 6, -3, 5, -2, 1])
+  merge([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10])
+  // console.log(filterArray('1, 4, 5, 67, 7, 8, 10'))
 }
 
 main()
