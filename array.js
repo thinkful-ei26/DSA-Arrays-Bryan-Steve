@@ -87,31 +87,37 @@ function maxSum(array) {
 // Input:[1, 3, 6, 8, 11] and [2, 3, 5, 8, 9, 10]
 // Output:[1, 2, 3, 3, 5, 6, 8, 8, 9, 10, 11]
 
-function merge(ar2, ar1) {
+function merge(ar1, ar2) {
   let mergedArr = []
-  let maxLength = 0
-  if (ar1.length > ar2.length) {
-    maxLength = ar1.length
-  } else {
-    maxLength = ar2.length
-  }
-  for (let i = 0; i < maxLength; i++) {
-    if (ar1[i] >= ar2[i]) {
-      mergedArr.push(ar2[i])
+  let i = 0
+  let j = 0
+  while (i < ar1.length && j < ar2.length) {
+    if (ar1[i] <= ar2[i]) {
       mergedArr.push(ar1[i])
+      i += 1
     } else {
-      mergedArr.push(ar1[i])
-      mergedArr.push(ar2[i])
+      mergedArr.push(ar2[j])
+      j += 1
     }
   }
-  console.log(mergedArr)
+  while (i < ar1.length) {
+    mergedArr.push(ar1[i])
+    i += 1
+  }
+
+  while (j < ar2.length) {
+    mergedArr.push(ar2[j])
+    j += 1
+  }
+
+  return mergedArr
 }
 function main() {
   Array.SIZE_RATIO = 3
   let arr = new Array()
   arr.push('3')
   // maxSum([4, 6, -3, 5, -2, 1])
-  merge([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10])
+  console.log(merge([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10]))
   // console.log(filterArray('1, 4, 5, 67, 7, 8, 10'))
 }
 
