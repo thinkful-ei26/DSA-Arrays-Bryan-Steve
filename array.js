@@ -87,7 +87,7 @@ function maxSum(array) {
 // Input:[1, 3, 6, 8, 11] and [2, 3, 5, 8, 9, 10]
 // Output:[1, 2, 3, 3, 5, 6, 8, 8, 9, 10, 11]
 
-function merge(ar1, ar2) {
+function mergeArr(ar1, ar2) {
   let mergedArr = []
   let i = 0
   let j = 0
