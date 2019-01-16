@@ -114,23 +114,16 @@ Array.SIZE_RATIO = 3
 
 const deleteChars = (input, separator) => {
   let stringArray = ['']
-  for (let j = 0; j < separator.length; j++) {
-    console.log(j)
-    for (let i = 0; i < input.length; i++) {
-      if (input.charAt(i) == separator) {
-        console.log(i)
-        // j++
-        stringArray.push('')
-      } else {
-        stringArray[j] += input.charAt(i)
-        // console.log(j)
-        // j++
-      }
+  let j = 0
+  for (let i = 0; i < input.length; i++) {
+    if (input.charAt(i) == separator) {
+      stringArray.push('')
+    } else {
+      stringArray[j] += input.charAt(i)
     }
   }
   return stringArray.join('')
 }
-
 function main() {
   Array.SIZE_RATIO = 3
   let arr = new Array()
