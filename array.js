@@ -44,10 +44,23 @@ class Array {
 
 Array.SIZE_RATIO = 3
 
+const URLify = string => {
+  //replace space with %20
+  let strArr = string.split('')
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i] === ' ') {
+      strArr[i] = '%20'
+    }
+  }
+
+  return strArr.join('')
+}
+
 function main() {
   Array.SIZE_RATIO = 3
   let arr = new Array()
   arr.push(3)
+  console.log(URLify('www.thinkful.com /tauh ida parv een'))
 }
 
 main()
